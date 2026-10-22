@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 280" role="img" aria-labelledby="vanTitle">
+  <title id="vanTitle">H2O Cleaning Services van</title>
+  <!--
+    H2O Cleaning Services — brand van illustration (side view, facing right).
+    Self-contained: wheels spin, body bobs and bubbles puff out the back.
+    Animations switch off automatically for visitors who prefer reduced motion.
+  -->
+  <style>
+    .wheel { animation: spin .75s linear infinite; transform-box: fill-box; transform-origin: 50% 50%; }
+    .body  { animation: bob .45s ease-in-out infinite alternate; }
+    .bub   { animation: puff 1.6s ease-out infinite; transform-box: fill-box; transform-origin: 50% 50%; opacity: 0; }
+    .bub.b2 { animation-delay: .5s; } .bub.b3 { animation-delay: 1s; }
+    .spark { animation: twinkle 2.2s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 50%; }
+    .spark.s2 { animation-delay: .8s; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes bob { from { transform: translateY(0); } to { transform: translateY(-1.6px); } }
+    @keyframes puff { 0% { opacity: .9; transform: translate(0,0) scale(.4); } 100% { opacity: 0; transform: translate(-46px,-18px) scale(1.3); } }
+    @keyframes twinkle { 0%,100% { transform: scale(.7); opacity: .6; } 50% { transform: scale(1.15); opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } .bub { opacity: 0; } }
+  </style>
+  <defs>
+    <clipPath id="bodyClip">
+      <path d="M28 62H410Q428 62 440 74L515 140Q522 146 534 148L586 156Q606 160 608 180L610 214Q610 226 598 226H22Q14 226 14 216V78Q14 62 28 62Z"/>
+    </clipPath>
+    <linearGradient id="bodyShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".75" stop-color="#f1f5fb"/>
+      <stop offset="1" stop-color="#dde5f0"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#334155"/>
+      <stop offset="1" stop-color="#0b1222"/>
+    </linearGradient>
+    <linearGradient id="drop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7ccef3"/>
+      <stop offset=".55" stop-color="#1172db"/>
+      <stop offset="1" stop-color="#0a3d9c"/>
+    </linearGradient>
+    <radialGradient id="rim" cx=".4" cy=".35" r=".7">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#94a3b8"/>
+    </radialGradient>
+    <filter id="soft" x="-10%" y="-200%" width="120%" height="500%"><feGaussianBlur stdDeviation="5"/></filter>
+  </defs>
+
+  <!-- ground shadow -->
+  <ellipse cx="316" cy="256" rx="296" ry="9" fill="#020617" opacity=".28" filter="url(#soft)"/>
+
+  <!-- bubble "exhaust" -->
+  <circle class="bub"    cx="10" cy="212" r="7" fill="none" stroke="#7ccef3" stroke-width="2.5"/>
+  <circle class="bub b2" cx="10" cy="206" r="5" fill="none" stroke="#bfe6fb" stroke-width="2"/>
+  <circle class="bub b3" cx="12" cy="216" r="6" fill="none" stroke="#3fb3f2" stroke-width="2.5"/>
+
+  <g class="body">
+    <!-- roof rack + ladder -->
+    <g fill="#94a3b8">
+      <rect x="56" y="50" width="10" height="12" rx="2"/><rect x="200" y="50" width="10" height="12" rx="2"/><rect x="344" y="50" width="10" height="12" rx="2"/>
+      <rect x="44" y="46" width="330" height="6" rx="3"/>
+    </g>
+    <g fill="none" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round">
+      <rect x="70" y="30" width="300" height="14" rx="3" fill="#e2e8f0" fill-opacity=".25"/>
+      <path d="M90 30v14M115 30v14M140 30v14M165 30v14M190 30v14M215 30v14M240 30v14M265 30v14M290 30v14M315 30v14M340 30v14"/>
+    </g>
+    <rect x="368" y="28" width="12" height="20" rx="3" fill="#64748b"/>
+
+    <!-- body -->
+    <path d="M28 62H410Q428 62 440 74L515 140Q522 146 534 148L586 156Q606 160 608 180L610 214Q610 226 598 226H22Q14 226 14 216V78Q14 62 28 62Z" fill="url(#bodyShade)" stroke="#c7d2e2" stroke-width="2"/>
+
+    <!-- livery waves (clipped to the body) -->
+    <g clip-path="url(#bodyClip)">
+      <path d="M0 178C80 152 180 216 290 206C380 198 430 168 474 172C450 194 400 226 340 240H0Z" fill="#021845"/>
+      <path d="M0 170C80 144 180 208 290 198C380 190 430 160 476 164" fill="none" stroke="#1172db" stroke-width="8" stroke-linecap="round"/>
+      <path d="M0 159C80 133 180 197 290 187C380 179 432 151 482 153" fill="none" stroke="#3fb3f2" stroke-width="5" stroke-linecap="round"/>
+      <path d="M300 226C360 220 420 196 476 190" fill="none" stroke="#1172db" stroke-width="6" stroke-linecap="round"/>
+      <path d="M330 232C390 226 438 210 480 204" fill="none" stroke="#7ccef3" stroke-width="4" stroke-linecap="round"/>
+    </g>
+
+    <!-- navy side panel with logo + services -->
+    <rect x="40" y="74" width="252" height="100" rx="9" fill="#021845"/>
+    <circle cx="86" cy="124" r="36" fill="#0b2a6b" stroke="#1172db" stroke-width="2"/>
+    <path d="M90 92C90 92 108 116 108 130A18 18 0 0 1 72 130C72 116 90 92 90 92Z" fill="url(#drop)"/>
+    <path d="M62 120L76 106L86 116" fill="none" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+    <text x="90" y="135" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="15" fill="#ffffff">H<tspan font-size="9" dy="3">2</tspan><tspan dy="-3">O</tspan></text>
+    <text x="86" y="152" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="5.5" fill="#bfe6fb" letter-spacing=".6">CLEANING</text>
+    <g font-family="Arial, Helvetica, sans-serif" font-size="9.5" fill="#ffffff" font-weight="600">
+      <text x="140" y="96">External &amp; Internal Windows</text>
+      <text x="140" y="112">Conservatory Roof Cleaning</text>
+      <text x="140" y="128">Gutter Emptying &amp; Cleaning</text>
+      <text x="140" y="144">Pressure Washing</text>
+      <text x="140" y="160">Solar Panel Cleaning</text>
+    </g>
+    <g fill="#3fb3f2">
+      <path d="M133 88c0 0 3 4 3 6a3 3 0 0 1-6 0c0-2 3-6 3-6z"/><path d="M133 104c0 0 3 4 3 6a3 3 0 0 1-6 0c0-2 3-6 3-6z"/>
+      <path d="M133 120c0 0 3 4 3 6a3 3 0 0 1-6 0c0-2 3-6 3-6z"/><path d="M133 136c0 0 3 4 3 6a3 3 0 0 1-6 0c0-2 3-6 3-6z"/>
+      <path d="M133 152c0 0 3 4 3 6a3 3 0 0 1-6 0c0-2 3-6 3-6z"/>
+    </g>
+
+    <!-- house + sparkles motif (on the sliding door) -->
+    <g transform="translate(-76 0)">
+    <path d="M392 186L431 152L470 186" fill="none" stroke="#021845" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+    <rect x="446" y="152" width="8" height="16" fill="#021845"/>
+    <rect x="422" y="170" width="16" height="16" rx="1.5" fill="#021845"/>
+    <path d="M430 170v16M422 178h16" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="482" cy="172" r="6" fill="#1172db"/><circle cx="480" cy="170" r="2" fill="#bfe6fb"/>
+    <path class="spark" d="M494 140l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#1172db"/>
+    <path class="spark s2" d="M512 162l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#3fb3f2"/>
+    </g>
+
+    <!-- panel seams, windows, details -->
+    <path d="M410 66V224M300 66V202" stroke="#c7d2e2" stroke-width="2"/>
+    <path d="M420 76H434L502 138V150H420Z" fill="url(#glass)" stroke="#0f172a" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M440 82L452 82L428 146L420 146Z" fill="#ffffff" opacity=".14"/>
+    <rect x="424" y="160" width="20" height="6" rx="3" fill="#94a3b8"/>
+    <rect x="306" y="120" width="20" height="6" rx="3" fill="#94a3b8"/>
+    <path d="M502 132h10a6 6 0 0 1 6 6v18a6 6 0 0 1-6 6h-6z" fill="#111827"/>
+    <path d="M588 162Q604 166 606 178L590 178Q584 170 588 162Z" fill="#fef3c7" stroke="#e5e7eb" stroke-width="1.5"/>
+    <rect x="574" y="176" width="10" height="5" rx="2" fill="#f59e0b"/>
+    <rect x="14" y="104" width="7" height="54" rx="2" fill="#dc2626"/>
+
+    <!-- bumpers + side strip -->
+    <rect x="8" y="198" width="62" height="28" rx="6" fill="#3b4252"/>
+    <path d="M556 184H604Q614 184 614 196V216Q614 228 602 228H556Z" fill="#3b4252"/>
+    <rect x="180" y="202" width="262" height="14" rx="4" fill="#3b4252"/>
+    <rect x="582" y="196" width="26" height="8" rx="2" fill="#1f2937"/>
+
+    <!-- wheel arches -->
+    <circle cx="140" cy="224" r="38" fill="#0b1330"/>
+    <circle cx="488" cy="224" r="38" fill="#0b1330"/>
+  </g>
+
+  <!-- wheels (outside the bob group so they stay planted) -->
+  <g>
+    <circle cx="140" cy="224" r="30" fill="#0f172a"/>
+    <circle cx="140" cy="224" r="26" fill="none" stroke="#1f2937" stroke-width="3"/>
+    <g class="wheel">
+      <circle cx="140" cy="224" r="17" fill="url(#rim)"/>
+      <g fill="#64748b"><circle cx="140" cy="213" r="3"/><circle cx="149.5" cy="218.5" r="3"/><circle cx="149.5" cy="229.5" r="3"/><circle cx="140" cy="235" r="3"/><circle cx="130.5" cy="229.5" r="3"/><circle cx="130.5" cy="218.5" r="3"/></g>
+      <circle cx="140" cy="224" r="5" fill="#475569"/>
+    </g>
+  </g>
+  <g>
+    <circle cx="488" cy="224" r="30" fill="#0f172a"/>
+    <circle cx="488" cy="224" r="26" fill="none" stroke="#1f2937" stroke-width="3"/>
+    <g class="wheel">
+      <circle cx="488" cy="224" r="17" fill="url(#rim)"/>
+      <g fill="#64748b"><circle cx="488" cy="213" r="3"/><circle cx="497.5" cy="218.5" r="3"/><circle cx="497.5" cy="229.5" r="3"/><circle cx="488" cy="235" r="3"/><circle cx="478.5" cy="229.5" r="3"/><circle cx="478.5" cy="218.5" r="3"/></g>
+      <circle cx="488" cy="224" r="5" fill="#475569"/>
+    </g>
+  </g>
+</svg>
