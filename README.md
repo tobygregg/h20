@@ -65,10 +65,12 @@ npm run dev        # rebuilds on save while you work
 
 ## Quote form (FormSubmit)
 
-The form posts to `https://formsubmit.co/h2ocleaninggsy@gmail.com` via AJAX (with a normal-POST fallback to `thank-you.html`).
+The form posts to `https://formsubmit.co/toby1@greggs.org` via AJAX (with a normal-POST fallback to `thank-you.html`).
+
+> **Temporary:** requests currently go to the developer's inbox for testing. Before handover, change the form `action` in `index.html` back to `https://formsubmit.co/h2ocleaninggsy@gmail.com` and activate it from that inbox.
 
 1. After the site is live, send **one test request**.
-2. FormSubmit emails `h2ocleaninggsy@gmail.com` an **activation link** — click it. Until then no requests are delivered.
+2. FormSubmit emails the address in the form `action` an **activation link** — click it. Until then no requests are delivered.
 3. Optional: FormSubmit then gives a random alias string; swap the email in the form `action` for it to hide the address from bots.
 
 Included: honeypot spam field, table-formatted emails, an auto-reply to the customer (if they give an email), and all ticked services combined into one "services" line.
