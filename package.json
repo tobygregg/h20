@@ -1,0 +1,13 @@
+{
+  "name": "h2o-cleaning-services",
+  "version": "1.0.0",
+  "description": "H2O Cleaning Services — Guernsey external cleaning website",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./assets/css/styles.css --minify",
+    "dev": "tailwindcss -i ./src/input.css -o ./assets/css/styles.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  },
+  "private": true
+}
